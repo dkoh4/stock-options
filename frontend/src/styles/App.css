@@ -1,0 +1,137 @@
+/* App layout */
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-bg);
+  overflow: hidden; /* Prevent any scroll */
+}
+
+/* Header styles */
+.App-header {
+  background-color: var(--secondary-bg);
+  border-bottom: 1px solid #333;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 100; /* Ensure header is above other content */
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+/* Main content area */
+.App-main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px); /* Ensure the main content takes full height minus header */
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Chart containers */
+.chart-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative; /* Ensure proper positioning for loading overlay */
+  box-sizing: border-box; /* Ensure padding and borders are included in element's width */
+}
+
+.chart-wrapper {
+  flex: 1;
+  min-height: 300px; /* Increased height since we're removing the resizing */
+  position: relative;
+  width: 100%; /* Ensure full width */
+}
+
+/* Remove Resizable separator 
+.chart-resizer {
+  width: 100%;
+  height: 10px;
+  background-color: #1a2130;
+  cursor: row-resize;
+  position: relative;
+  border-top: 1px solid #2a3245;
+  border-bottom: 1px solid #2a3245;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.chart-resizer::before {
+  content: "";
+  width: 30px;
+  height: 4px;
+  background-color: #4c9aff;
+  border-radius: 2px;
+}
+*/
+
+.rsi-chart-wrapper {
+  height: 150px; /* Fixed height */
+  width: 100%; /* Ensure full width */
+  position: relative;
+  border-top: 1px solid #2a3245; /* Add border to separate from main chart */
+}
+
+/* Hide TradingView logo */
+.tv-lightweight-charts__watermark {
+  display: none !important;
+}
+
+/* Loading overlay */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 22, 33, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above everything */
+}
+
+.loading-text {
+  margin-top: 15px;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  border: 5px solid #2a3245;
+  border-top: 5px solid #4c9aff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+/* Chart visibility */
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+} 

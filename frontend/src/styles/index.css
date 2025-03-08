@@ -1,0 +1,45 @@
+/* Root variables to ensure consistent color scheme */
+:root {
+  --primary-bg: #121212;
+  --secondary-bg: #1e1e1e;
+  --accent-color: #4caf50;
+  --error-color: #f44336;
+  --text-primary: #ffffff;
+  --text-secondary: #9e9e9e;
+}
+
+/* Basic reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Make sure App takes full height */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+} 
